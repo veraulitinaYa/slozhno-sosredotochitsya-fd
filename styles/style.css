@@ -319,8 +319,7 @@ text-transform: var(--decoration-font-uppercase);
 
 .headed-child-list {
   display: grid;
-  gap: var(--gap-other);
-
+  gap: 20px;
 
 }
 
