@@ -4,14 +4,11 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 display: grid;
 max-inline-size: 375px;
-block-size: auto;
-grid-template-columns: 1fr;
-justify-content: center;
+justify-self: center;
 background-image: var(--background-image);
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
-gap: var(--document-gap);
 
 @media (width >= 375px) {
   max-inline-size: 768px;
@@ -31,34 +28,12 @@ gap: var(--document-gap);
 }
 
 .header {
-  position: relative;
+  block-size: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
   padding: var(--general-padding);
-  height: 100vh;
 
-}
 
-.decorated-zone::before {
-  content: '';
-  position: relative;
-  justify-self: end;
-  inline-size: 25px;
-  block-size: 25px;
-  border-inline-end: 1px solid var(--decoration-color);
-  border-block-start: 1px solid var(--decoration-color);
-
-}
-
-.decorated-zone::after {
-  content: '';
-  position: relative;
-  justify-self: start;
-  align-self: end;
-  inline-size: 25px;
-  block-size: 25px;
-  border-inline-start: 1px solid var(--decoration-color);
-  border-block-end: 1px solid var(--decoration-color);
 }
 
 .decoration {
@@ -72,14 +47,12 @@ gap: var(--document-gap);
 
 .decoration-text
 {
-position: relative;
 font-family: var(--document-font), monospace;
 color: var(--decoration-color);
 text-transform: var(--decoration-font-uppercase);
 }
 
 .decoration-image {
-  position: relative;
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -88,25 +61,57 @@ text-transform: var(--decoration-font-uppercase);
   align-self: center;
 }
 
-.header__theme-menu {
-  position: relative;
-  display: grid;
 
+.decorated-zone {
+  position: relative;
+}
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+
+  border-top: 1px solid var(--decoration-color);
+  border-right: 1px solid var(--decoration-color);
+  inset-block-start: var(--general-padding);
+  inset-inline-end: var(--general-padding);
+
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+
+  border-bottom: 1px solid var(--decoration-color);
+  border-left: 1px solid var(--decoration-color);
+  inset-block-end: var(--general-padding);
+  inset-inline-start: var(--general-padding);
+
+}
+
+.header__theme-menu {
+
+  justify-self: end;
+  align-self: center;
+
+  @media (width >= 1024px) {
+
+    justify-self: center;
+    align-self: start;
+  }
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  justify-self: end;
   gap: 10px;
   @media (width >= 1024px) {
-    flex-direction: row;
-    align-self: start;
-    justify-self: center;
+
+  flex-direction: row;
   }
 }
-
-
 
 .header__theme-menu-button {
   line-height: 100%;
@@ -144,14 +149,12 @@ text-transform: var(--decoration-font-uppercase);
 }
 
 .h1-settings {
-  justify-self: relative;
   font-family: var(--document-font), monospace;
   font-size: var(--h1-font-size);
   font-weight: var(--font-bold);
   color: var(--h1-font-color);
   line-height: 83%;
   text-shadow: 4px 4px var(--h1-shadow-color);
-
 }
 
 .h4-settings {
@@ -161,26 +164,28 @@ text-transform: var(--decoration-font-uppercase);
   color: var(--h4-font-color);
   background-color: var(--h4-background-color);
   line-height: 130%;
+
 }
 
 .h4-cover {
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: min-content min-content;
-max-height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content;
+  max-height: fit-content;
+  align-self: center;
 
 
-@media (width >= 768px) {
-max-width: 50%;
-justify-self: end;
-}
-
-@media (width >= 1024px) {
+  @media (width >= 768px) {
   max-width: 50%;
   justify-self: end;
-}
+  }
 
-}
+  @media (width >= 1024px) {
+    max-width: 50%;
+    justify-self: end;
+  }
+
+  }
 
 
 
