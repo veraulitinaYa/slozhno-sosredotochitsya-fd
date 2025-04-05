@@ -11,69 +11,47 @@
   */
   --background-color: #000028;
   --background-image: url(../images/cover-image-dark.png);
-  --h1-font-color: #DB00FF;
-  --h1-shadow-color: #ff0070;
-  --h2-font-color: #DB00FF;
-  --h2-shadow-color: #ff0070;
-  --h3-font-color: #FF0070;
-  --h4-font-color: #000028;
-  --h4-background-color: #FF0070;
-  --h5-font-color: #000028;
-  --h5-background-color: #FF0070;
-  --text-font-color: #F1B2CE;
-  --link-font-color: #F1B2CE;
-  --link-shadow-color: #FF0070;
-  --button-color: #FF0070;
+  --title-color: #db00ff;
+  --accent-color: #ff0070;
+  --section-header-color: #ff0070;
+  --subheader-color: #000028;
+  --text-font-color: #f1b2ce;
+  --link-shadow-color: #ff0070;
+  --header-menu-color: #ff0070;
   --button-color-hover: rgba(255, 0, 112, 0.4);
   --button-background-color: transparent;
-  --decoration-color: #FF0070;
-  --document-font: 'IBM Plex Mono';
+  --document-font: "IBM Plex Mono";
   --font-regular: 400;
   --font-bold: 700;
-  --h1-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --h2-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --h3-font-size: 18px;
-  --h4-font-size: 18px;
-  --h5-font-size: 18px;
-  --text-font-size: 18px;
-  --decoration-font-size: 18px;
-  --decoration-font-uppercase: uppercase;
-  --button-font-size: 18px;
-  --font-bold-setting: 18px;
-  --font-underline-setting: underline;
-  --general-padding: 10px;
+  --title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --general-font-size: 18px;
+  --general-spacing: 10px;
   --document-gap: 30px;
   --section-gap: 50px;
-  --gap-other: 10px;
+  --screen-min-height: 668px;
 }
 
-  @media (width >= 768px) {
-    :root.theme-dark {
-      --h1-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-      --h2-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-      --general-padding: 20px;
-      --document-gap: 20px;
-      --section-gap: 80px;
-      --gap-other: 20px;
-    }
+@media (width >= 768px) {
+  :root.theme-dark {
+    --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --general-spacing: 20px;
+    --document-gap: 20px;
+    --section-gap: 80px;
+    --screen-min-height: 1024px;
   }
+}
 
-    @media (width >= 1024px) {
-      :root.theme-dark {
-        --h1-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-        --h2-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-        --general-padding: 20px;
-        --document-gap: 20px;
-        --section-gap: 80px;
-        --gap-other: 20px;
-      }
-    }
+@media (width >= 1024px) {
+  :root.theme-dark {
+    --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --general-spacing: 20px;
+    --document-gap: 20px;
+    --section-gap: 80px;
+    --screen-min-height: 768px;
+  }
+}
 
-
-
-
-
-.theme-dark .page {
-
+.theme-dark .decoration {
+  display: flex;
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
