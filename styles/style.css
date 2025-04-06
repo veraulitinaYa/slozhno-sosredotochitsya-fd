@@ -43,8 +43,8 @@
   gap: 10px;
   justify-self: end;
   align-items: center;
-  inset-inline-end: 29px;
-  inset-block-start: 22px;
+  inset-inline-end: calc(var(--general-spacing) + 9px);
+  inset-block-start: calc(var(--general-spacing) + 2px);
 }
 
 .decoration-text {
@@ -384,6 +384,7 @@ padding: 2px 13px 6px 13px;
   grid-template-columns: 1fr;
   padding: var(--general-spacing);
   height: 100vh;
+  min-height: var(--screen-min-height);
 }
 
 .footer-title-settings {
